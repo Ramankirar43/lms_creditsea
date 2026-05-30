@@ -9,6 +9,7 @@ import { getDefaultRoute } from '@/hooks/useAuthGuard';
 import { useMounted } from '@/hooks/use-mounted';
 import { useAuthStore } from '@/store/authStore';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function Navbar({ title }: { title?: string }) {
   const mounted = useMounted();
   const { theme, setTheme } = useTheme();

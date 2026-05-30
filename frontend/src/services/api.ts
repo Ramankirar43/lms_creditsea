@@ -36,6 +36,9 @@ api.interceptors.response.use(
 
 export function getErrorMessage(error: unknown): string {
   if (axios.isAxiosError(error)) {
+    if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
+      return 'Cannot reach the API server. Make sure the backend is running on port 5000 (npm run dev from project root).';
+    }
     return error.response?.data?.message ?? error.message ?? 'Something went wrong';
   }
   if (error instanceof Error) return error.message;

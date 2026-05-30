@@ -181,7 +181,7 @@ export default function HomePage() {
               <CardContent className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Loan Amount: ₹{loanAmount.toLocaleString()}
+                    Loan Amount: ₹{loanAmount.toLocaleString('en-IN')}
                   </label>
                   <Input
                     type="range"
@@ -235,11 +235,11 @@ export default function HomePage() {
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600 dark:text-slate-400">Total Amount:</span>
-                      <span className="font-medium text-slate-900 dark:text-white">₹{(parseFloat(emi) * loanTenure).toFixed(0).toLocaleString()}</span>
+                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(parseFloat(emi) * loanTenure).toLocaleString('en-IN')}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600 dark:text-slate-400">Total Interest:</span>
-                      <span className="font-medium text-slate-900 dark:text-white">₹{(parseFloat(emi) * loanTenure - loanAmount).toFixed(0).toLocaleString()}</span>
+                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(parseFloat(emi) * loanTenure - loanAmount).toLocaleString('en-IN')}</span>
                     </div>
                   </div>
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white">
@@ -277,7 +277,7 @@ export default function HomePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 dark:text-slate-400 italic">"{testimonial.content}"</p>
+                  <p className="text-slate-600 dark:text-slate-400 italic">&ldquo;{testimonial.content}&rdquo;</p>
                 </CardContent>
               </Card>
             ))}
@@ -328,10 +328,10 @@ export default function HomePage() {
                 CreditSea is a leading fintech platform dedicated to providing accessible and transparent lending solutions. Our Loan Management System (LMS) streamlines the entire loan lifecycle from application to repayment.
               </p>
               <p className="text-slate-600 dark:text-slate-400 mb-4">
-                With cutting-edge technology and a customer-centric approach, we've helped thousands of borrowers achieve their financial goals. Our platform ensures quick approvals, transparent terms, and flexible repayment options.
+                With cutting-edge technology and a customer-centric approach, we&apos;ve helped thousands of borrowers achieve their financial goals. Our platform ensures quick approvals, transparent terms, and flexible repayment options.
               </p>
               <p className="text-slate-600 dark:text-slate-400 mb-6">
-                We're committed to making lending fair, fast, and accessible to everyone.
+                We&apos;re committed to making lending fair, fast, and accessible to everyone.
               </p>
               <div className="flex gap-4">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700">

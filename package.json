@@ -7,7 +7,7 @@
     "seed": "npm run seed --prefix backend",
     "build": "npm run build --prefix backend && npm run build --prefix frontend",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
