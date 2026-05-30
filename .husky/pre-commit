@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+cd backend && npm run lint
+cd ../frontend && npm run lint

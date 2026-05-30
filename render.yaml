@@ -1,0 +1,51 @@
+services:
+  # 1. Express Backend Web Service
+  - type: web
+    name: lms-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false # User will provide this in the Render dashboard
+      - key: JWT_SECRET
+        generateValue: true # Generates a secure random 256-bit key automatically
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: UPLOAD_DIR
+        value: uploads
+      - key: CORS_ORIGIN
+        fromService:
+          name: lms-frontend
+          type: web
+          property: host
+
+  # 2. Next.js Frontend Web Service
+  - type: web
+    name: lms-frontend
+    env: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: lms-backend
+          type: web
+          property: host
+          value: https://lms-backend.onrender.com/api # fallback or sync
+      - key: NEXT_PUBLIC_UPLOAD_URL
+        fromService:
+          name: lms-backend
+          type: web
+          property: host
+          value: https://lms-backend.onrender.com
