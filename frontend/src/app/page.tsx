@@ -235,11 +235,11 @@ export default function HomePage() {
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600 dark:text-slate-400">Total Amount:</span>
-                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(parseFloat(emi) * loanTenure).toLocaleString('en-IN')}</span>
+                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(Number(emi) * loanTenure).toLocaleString('en-IN')}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600 dark:text-slate-400">Total Interest:</span>
-                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(parseFloat(emi) * loanTenure - loanAmount).toLocaleString('en-IN')}</span>
+                      <span className="font-medium text-slate-900 dark:text-white">₹{Math.round(Number(emi) * loanTenure).toLocaleString('en-IN')}</span>
                     </div>
                   </div>
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white">
