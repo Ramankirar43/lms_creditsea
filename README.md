@@ -1,4 +1,6 @@
 # Loan Management System (LMS)
+DEMO LINK - https://drive.google.com/file/d/1kF0Rl9cFWwSaDx2r1agnLT22cjIcJC07/view?usp=sharing
+
 
 A production-ready full-stack Loan Management System with a **Borrower Portal** and **Operations Dashboard**, built per the LMS assignment specification.
 
@@ -209,6 +211,3 @@ Login as `sales@test.com` — view borrowers registered without a loan applicati
 | Sanction Dashboard | `./docs/screenshots/sanction.png` |
 | Admin Dashboard | `./docs/screenshots/admin.png` |
 
-## License
-
-MIT — educational assignment project.
